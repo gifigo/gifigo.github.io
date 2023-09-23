@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    {% include meta.html %}
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="icon" type="image/png" href="https://gifigo.github.io/welcome/icon.png" />
+
+<style>
+
+body {
+background-color:black;
+color: white;
+} 
+
+a { 
+color:#30f4df;
+} 
+    
+a:hover {
+color:#cccccc;
+} 
+    
+a:active {
+color:#30f4df;
+} 
+
+
+.wrapper-masthead {
+  background-color: white;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: #30f4df;
+}
+
+.posts > .post {
+  border-bottom: 3px dotted #30f4df;
+}
+
+.wrapper-footer {
+  margin-top: 50px;
+  border-top: 0px dotted #30f4df;
+  border-bottom: 0px dotted #30f4df;
+  background-color: black;
+}
+
+</style>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+
+          <nav>
+            <a style="color:black;" href="{{ site.baseurl }}/">Blog</a>
+            <a style="color:black;" href="{{ site.baseurl }}/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      {{ content }}
+    </div>
+
+    <div class="wrapper-footer" style="background-color:black;" >
+      <div class="container">
+        <footer class="footer">
+          {% include svg-icons.html %}
+        </footer>
+        <center><span style="font-size: small;" >All texts are released under: <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" >(CC BY-NC-SA 3.0)</a></span></center>
+
+      </div>
+    </div>
+
+    {% include analytics.html %}
+  </body>
+</html>
